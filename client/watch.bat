@@ -1,0 +1,1 @@
+%appdata%\npm\gulp watch

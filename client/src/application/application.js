@@ -1,14 +1,16 @@
 import {computedFrom} from 'aurelia-framework';
 import {inject} from 'aurelia-framework';
 import {StateService} from '../services/state-service';
+import {UserApplicationService} from '../services/user-application-service';
 
 
-@inject(StateService)
+@inject(StateService, UserApplicationService)
 
 export class Application{
 
-  constructor(stateService)  {
+  constructor(stateService, userApplicationService)  {
     this.stateService = stateService;
+    this.userApplicationService = userApplicationService;
 
     this.address = '';
     this.city = '';
@@ -33,6 +35,8 @@ export class Application{
 
 
 submitForm(){
+  this.userApplicationService.addCustomer(this);
+
   console.log(`fullname is ${this.fullname}, state is ${this.selectedState.name}, and zip is ${this.zip}.`);
 
 }
