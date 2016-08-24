@@ -1,0 +1,18 @@
+<template>
+  <div class="container">
+  <require from='./nav-bar'></require>
+<header>
+  <nav-bar class="row" router.bind="router"></nav-bar>
+</header>
+  <main   class="row">
+     <router-view></router-view>
+  </main>
+  <footer id="myFooter" class="row">
+    <ul class="nav navbar-nav">
+      <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+        <a if.bind="!row.settings.isTop" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1.in" href.bind="row.href">${row.title}</a>
+      </li>
+    </ul>
+  </footer>
+</div>
+</template>
