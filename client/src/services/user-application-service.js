@@ -24,17 +24,44 @@ export class UserApplicationService {
     "dateCreated": Date.now(),
   }
 
-    return this.postSomeJson(user)
+    return this.addUser(user)
   }
 
-  postSomeJson(user) {
-      return  this.http.fetch('http://localhost:3000/api/customers', {
+  addUser(user) {
+
+          return  this.http.fetch('http://localhost:3000/api/customers', {
+                headers: {
+                      'Content-Type': 'application/json'
+                      // More options
+                  },
+                  method: 'post',
+                  body: JSON.stringify(user)
+                }).then(response =>  {
+                  return {success:true, message:`User with email:${user.email} added.`};
+                });
+  }
+
+    userExists(email) {
+      return  this.http.fetch('http://localhost:3000/api/customers?filter[where][email]=' + email,
+       {
           headers: {
                 'Content-Type': 'application/json'
                 // More options
             },
-            method: 'post',
-            body: JSON.stringify(user)
+            method: 'get',
+
         })
-    }
+       .then(response => response.json())
+       .then(data => {
+
+         if (data != null && data.length > 0) {
+           return {success:false, message:`User with email:${email} Already Exists.`};
+         }
+        else {
+            return {success:true, message: ''};
+        }
+    
+    });
+  }
+
 }

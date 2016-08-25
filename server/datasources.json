@@ -1,6 +1,11 @@
 {
   "db": {
-    "name": "db",
-    "connector": "memory"
+    "name": "HCM",
+    "connector": "mongodb",
+    "host": "ds015334.mlab.com",
+    "port": 15334,
+    "database": "hcm",
+    "username": "microgold",
+    "password": "flaxseed99"
   }
 }

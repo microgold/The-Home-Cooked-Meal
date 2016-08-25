@@ -17,6 +17,7 @@ export class Application{
     this.selectedState = null;
     this.zip = '';
     this.isLegal = false;
+    this.showMessage = false;
 
 // pull some of the attributes from the SSO login profile
     let profileString =  localStorage.getItem('profile');
@@ -35,7 +36,23 @@ export class Application{
 
 
 submitForm(){
-  this.userApplicationService.addCustomer(this);
+
+    let userExistPromise = this.userApplicationService.userExists(this.email);
+    userExistPromise.then(result => {
+      if (result.success == false) {
+        this.showMessage = true;
+        this.message = result.message; this.success = result.success;
+    }
+    else {
+      let promise = this.userApplicationService.addCustomer(this);
+      promise.then(result => {
+        if (result != null)    {
+          this.showMessage = true; this.message = result.message; this.success = result.success;
+      }
+    });
+  }
+});
+
 
   console.log(`fullname is ${this.fullname}, state is ${this.selectedState.name}, and zip is ${this.zip}.`);
 

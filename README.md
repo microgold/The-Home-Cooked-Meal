@@ -34,6 +34,8 @@ jspm install
 In the server directory :
 ```bash
 npm install
+
+npm install loopback-connector-mongodb --save
 ```
 
 Run the loopback server with
