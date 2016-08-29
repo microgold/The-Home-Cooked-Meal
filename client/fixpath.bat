@@ -1,0 +1,1 @@
+Set Path = %Path%;c:\%appdata%\npm

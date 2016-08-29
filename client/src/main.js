@@ -4,7 +4,10 @@ import 'bootstrap';
 export function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
-    .developmentLogging();
+    .developmentLogging()
+    .plugin('aurelia-validatejs')
+    .plugin('aurelia-validation')
+    .feature('bootstrap-validation');
 
   //Uncomment the line below to enable animation.
   //aurelia.use.plugin('aurelia-animator-css');
