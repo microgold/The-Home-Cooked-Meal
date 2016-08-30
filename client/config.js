@@ -24,7 +24,7 @@ System.config({
     "aurelia-templating-resources": "npm:aurelia-templating-resources@1.0.0",
     "aurelia-templating-router": "npm:aurelia-templating-router@1.0.0",
     "aurelia-validatejs": "npm:aurelia-validatejs@0.7.0",
-    "aurelia-validation": "npm:aurelia-validation@0.12.1",
+    "aurelia-validation": "npm:aurelia-validation@0.12.2",
     "bluebird": "npm:bluebird@3.4.1",
     "bootstrap": "github:twbs/bootstrap@3.3.7",
     "fetch": "github:github/fetch@1.0.0",
@@ -60,7 +60,7 @@ System.config({
       "aurelia-pal": "npm:aurelia-pal@1.0.0",
       "aurelia-templating": "npm:aurelia-templating@1.0.1"
     },
-    "npm:aurelia-binding@1.0.2": {
+    "npm:aurelia-binding@1.0.3": {
       "aurelia-logging": "npm:aurelia-logging@1.0.0",
       "aurelia-metadata": "npm:aurelia-metadata@1.0.0",
       "aurelia-pal": "npm:aurelia-pal@1.0.0",
@@ -90,7 +90,7 @@ System.config({
       "aurelia-logging": "npm:aurelia-logging@1.0.0"
     },
     "npm:aurelia-framework@1.0.0": {
-      "aurelia-binding": "npm:aurelia-binding@1.0.2",
+      "aurelia-binding": "npm:aurelia-binding@1.0.3",
       "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.0.0",
       "aurelia-loader": "npm:aurelia-loader@1.0.0",
       "aurelia-logging": "npm:aurelia-logging@1.0.0",
@@ -144,12 +144,12 @@ System.config({
       "aurelia-pal": "npm:aurelia-pal@1.0.0"
     },
     "npm:aurelia-templating-binding@1.0.0": {
-      "aurelia-binding": "npm:aurelia-binding@1.0.2",
+      "aurelia-binding": "npm:aurelia-binding@1.0.3",
       "aurelia-logging": "npm:aurelia-logging@1.0.0",
       "aurelia-templating": "npm:aurelia-templating@1.0.1"
     },
     "npm:aurelia-templating-resources@1.0.0": {
-      "aurelia-binding": "npm:aurelia-binding@1.0.2",
+      "aurelia-binding": "npm:aurelia-binding@1.0.3",
       "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.0.0",
       "aurelia-loader": "npm:aurelia-loader@1.0.0",
       "aurelia-logging": "npm:aurelia-logging@1.0.0",
@@ -169,7 +169,7 @@ System.config({
       "aurelia-templating": "npm:aurelia-templating@1.0.1"
     },
     "npm:aurelia-templating@1.0.1": {
-      "aurelia-binding": "npm:aurelia-binding@1.0.2",
+      "aurelia-binding": "npm:aurelia-binding@1.0.3",
       "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.0.0",
       "aurelia-loader": "npm:aurelia-loader@1.0.0",
       "aurelia-logging": "npm:aurelia-logging@1.0.0",
@@ -180,18 +180,13 @@ System.config({
     },
     "npm:aurelia-validatejs@0.7.0": {
       "aurelia-metadata": "npm:aurelia-metadata@1.0.0",
-      "aurelia-validation": "npm:aurelia-validation@0.12.1",
+      "aurelia-validation": "npm:aurelia-validation@0.12.2",
       "validate.js": "npm:validate.js@0.10.0"
     },
-    "npm:aurelia-validation@0.11.0": {
-      "aurelia-binding": "npm:aurelia-binding@1.0.2",
+    "npm:aurelia-validation@0.12.2": {
+      "aurelia-binding": "npm:aurelia-binding@1.0.3",
       "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.0.0",
-      "aurelia-metadata": "npm:aurelia-metadata@1.0.0",
       "aurelia-task-queue": "npm:aurelia-task-queue@1.0.0",
-      "aurelia-templating": "npm:aurelia-templating@1.0.1"
-    },
-    "npm:aurelia-validation@0.12.1": {
-      "aurelia-binding": "npm:aurelia-binding@1.0.2",
       "aurelia-templating": "npm:aurelia-templating@1.0.1"
     },
     "npm:bluebird@3.4.1": {

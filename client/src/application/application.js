@@ -2,11 +2,9 @@ import {computedFrom} from 'aurelia-framework';
 import {inject, NewInstance} from 'aurelia-dependency-injection';
 import {StateService} from '../services/state-service';
 import {UserApplicationService} from '../services/user-application-service';
-import {ValidationRules, required} from 'aurelia-validatejs';
+import {ValidationRules, required, email} from 'aurelia-validatejs';
 import {ValidationController, validateTrigger, validationMessages} from 'aurelia-validation';
-
-
-
+import {SimpleValidationRenderer} from  '../resources/validation/simple-validation-renderer'
 
 @inject(StateService, UserApplicationService, NewInstance.of(ValidationController))
 export class Application{
@@ -17,14 +15,20 @@ export class Application{
   @required
   fullname = null;
 
+  @email
+  @required
+  email = null;
+
+  @required
+  zip = null;
+
 
 
   constructor(stateService, userApplicationService, validationController)  {
     this.stateService = stateService;
     this.userApplicationService = userApplicationService;
     this.validationController = validationController;
-
-    this.validationController.validateTrigger = validateTrigger.manual;
+    this.validationController.validateTrigger = validateTrigger.blur;
   //  validationMessages['required'] = `\${$displayName} is missing!`;
 
 
@@ -61,6 +65,7 @@ bind() {
 
 submitForm(){
 // let errors = this.validationController.validate();
+   this.validationController.reset();
    this.validationController.validate().then(result => {
           if (result.length == 0)
           {

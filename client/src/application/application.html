@@ -6,8 +6,8 @@
 <div if.bind="showMessage && success" class="row cols-xs-12 alert alert-success">
    ${message}
 </div>
-<form class="form-vertical" 
-   submit.delegate = "submitForm()">
+<!-- <form class="form-vertical" validation-renderer = "simple-renderer"   submit.delegate = "submitForm()"> -->
+<form class="form-vertical" validation-renderer = "bootstrap-form"   submit.delegate = "submitForm()">
 <div class="form-group row ">
   <div class="col-xs-6">
     <label for="fullname">Name:</label>
@@ -34,7 +34,7 @@
 </div>
 <div class="form-group col-xs-4">
   <label for="zip">Zip:</label>
-  <input type="text" class="form-control" id="zip" value.bind="zip">
+  <input type="text" class="form-control" id="zip" value.bind="zip & validate">
 </div>
 <div class="form-group row col-xs-12">
   <label for="phone">Phone:</label>
@@ -42,18 +42,18 @@
 </div>
 <div class="form-group row col-xs-12">
   <label for="email">Email:</label>
-  <input type="email" class="form-control" id="email" value.bind="email">
+  <input type="email" class="form-control" id="email" value.bind="email & validate">
 </div>
 <div class="form-group row col-xs-12">
-  <label for="email">Consent:</label>
+  <label for="consent">Consent:</label>
   <div >
     <span>I am over the age of 18.</span>
     <input type="checkbox" class="checkbox-inline checkbox-padding" id="consent" checked.bind="isLegal">
   </div>
 </div>
-<div class="row">
-<input type="submit"  class="btn btn-primary">Apply</input>
-</div>
+<div class="row form-group col-xs-12">
+<input type="submit"  class="btn btn-primary" value="Apply"></input>
+</div>"
 </form>
 </div>
 </template>

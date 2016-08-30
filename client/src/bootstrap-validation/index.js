@@ -1,4 +1,4 @@
-import {BootstrapFormValidationRenderer} from './bootstrap-form-validation-renderer';
+import {BootstrapFormValidationRenderer} from './bootstrap-form-validation-renderer'
 
 
 export function configure(config) {

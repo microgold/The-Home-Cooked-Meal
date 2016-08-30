@@ -1,1 +1,1 @@
-Set Path = %Path%;c:\%appdata%\npm
+path = %path%;c:\%appdata%\npm
